@@ -1,11 +1,5 @@
 import React from 'react';
-import { ContactForm } from './ContactForm/ContactForm';
-import { ContactList } from './ContactList/ContactList';
-import { Filter } from './Filter/Filter';
 import { Container } from './App.styled';
-import { useSelector } from 'react-redux';
-import { selectError, selectIsLoading } from 'redux/selectors';
-import { Loader } from 'components/Loader/Loader';
 import { Route, Routes } from 'react-router-dom';
 import Navigation from './Navigation/Navigation';
 import Home from 'pages/Home/Home';
