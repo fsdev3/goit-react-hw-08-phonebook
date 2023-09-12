@@ -15,7 +15,7 @@ export const Filter = () => {
       <input
         type="text"
         name="filter"
-        value={filter}
+        value={filter.filter}
         placeholder="Enter name"
         onChange={e => onChange(e)}
       />
