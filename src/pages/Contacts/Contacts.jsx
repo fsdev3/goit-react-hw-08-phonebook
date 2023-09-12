@@ -5,13 +5,13 @@ import { Filter } from 'components/Filter/Filter';
 import { Loader } from 'components/Loader/Loader';
 import { useSelector } from 'react-redux';
 import { selectError, selectIsLoading } from 'redux/selectors';
-import { Container } from './Contacts.styled';
+import { ContactDiv } from './Contacts.styled';
 
 const Contacts = () => {
-  const error = useSelector(selectError);
   const isLoading = useSelector(selectIsLoading);
+  const error = useSelector(selectError);
   return (
-    <Container>
+    <ContactDiv>
       <h1>Phonebook</h1>
       <ContactForm />
       <h2>Contacts</h2>
@@ -19,7 +19,7 @@ const Contacts = () => {
       {error && <b>Error: {error}</b>}
       {isLoading && <Loader />}
       <ContactList />
-    </Container>
+    </ContactDiv>
   );
 };
 

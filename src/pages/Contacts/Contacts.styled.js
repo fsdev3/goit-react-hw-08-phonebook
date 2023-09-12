@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  margin: 60px auto 0 auto;
-  background-color: #d8ecda;
+export const ContactDiv = styled.div`
+  margin: 40px auto 0 auto;
+  background-color: #e1f1f8;
   width: 360px;
   height: 100%;
-  padding: 80px;
+  padding: 60px;
   border-radius: 4px;
 
   h1 {

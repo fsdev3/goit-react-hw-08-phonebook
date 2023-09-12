@@ -6,7 +6,7 @@ export function Loader() {
       height="80"
       width="80"
       radius="48"
-      color="#4fa94d"
+      color="#5cb2db"
       ariaLabel="watch-loading"
       wrapperStyle={{}}
       wrapperClassName=""

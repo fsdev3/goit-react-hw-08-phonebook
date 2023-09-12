@@ -2,11 +2,11 @@ import React, { lazy, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Navigation from './Navigation/Navigation';
 import { RestrictedRoute } from './RestrictedRoute';
-import { Loader } from './Loader/Loader';
+import { PrivateRoute } from './PrivateRoute';
 import { useDispatch } from 'react-redux';
 import { useAuth } from 'hooks/useAuth';
 import { refreshUser } from 'redux/auth/operations';
-import { PrivateRoute } from './PrivateRoute';
+import { Loader } from './Loader/Loader';
 
 const Home = lazy(() => import('../pages/Home/Home'));
 const Contacts = lazy(() => import('../pages/Contacts/Contacts'));
@@ -24,31 +24,27 @@ export const App = () => {
   return isRefreshing ? (
     <Loader />
   ) : (
-    <div>
-      <Routes>
-        <Route path="/" element={<Navigation />}>
-          <Route index element={<Home />} />
-          <Route
-            path="/register"
-            element={
-              <RestrictedRoute redirectTo="/contacts" element={<Register />} />
-            }
-          />
-          <Route
-            path="/login"
-            element={
-              <RestrictedRoute redirectTo="/contacts" element={<Login />} />
-            }
-          />
-          <Route
-            path="/contacts"
-            element={
-              <PrivateRoute redirectTo="/login" element={<Contacts />} />
-            }
-          />
-          <Route path="*" element={<NotFound />} />
-        </Route>
-      </Routes>
-    </div>
+    <Routes>
+      <Route path="/" element={<Navigation />}>
+        <Route index element={<Home />} />
+        <Route
+          path="/register"
+          element={
+            <RestrictedRoute redirectTo="/contacts" element={<Register />} />
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <RestrictedRoute redirectTo="/contacts" element={<Login />} />
+          }
+        />
+        <Route
+          path="/contacts"
+          element={<PrivateRoute redirectTo="/login" element={<Contacts />} />}
+        />
+        <Route path="*" element={<NotFound />} />
+      </Route>
+    </Routes>
   );
 };

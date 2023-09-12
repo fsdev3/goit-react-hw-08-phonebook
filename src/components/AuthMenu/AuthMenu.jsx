@@ -1,10 +1,10 @@
-import { NavLink } from 'react-router-dom';
+import { HeaderNavLink } from './AuthMene.styled';
 
 const AuthMenu = () => {
   return (
     <>
-      <NavLink to="/register">SIGN UP</NavLink>
-      <NavLink to="/login">LOG IN</NavLink>
+      <HeaderNavLink to="/register">SIGN UP</HeaderNavLink>
+      <HeaderNavLink to="/login">LOG IN</HeaderNavLink>
     </>
   );
 };
