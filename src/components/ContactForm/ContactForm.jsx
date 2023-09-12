@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { Form } from './ContactForm.styled';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addContact } from 'redux/operations';
-import { selectContacts } from 'redux/selectors';
+import { useContacts } from 'hooks/useContacts';
 
 export const ContactForm = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
-  const contacts = useSelector(selectContacts);
+  const contacts = useContacts();
   const dispatch = useDispatch();
 
   const handleSubmit = e => {

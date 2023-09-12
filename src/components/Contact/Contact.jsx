@@ -13,7 +13,9 @@ export function Contact({ contact }) {
       <p>
         {name}: {number}
       </p>
-      <button onClick={handleDeleteContact}>Delete</button>
+      <button type="button" onClick={handleDeleteContact}>
+        Delete
+      </button>
     </Item>
   );
 }
