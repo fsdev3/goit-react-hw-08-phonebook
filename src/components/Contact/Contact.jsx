@@ -12,7 +12,7 @@ export function Contact({ contact }) {
   return (
     <Item>
       <p>
-        {name}: {number}
+        {name} : {number}
       </p>
       <Button
         colorScheme="blue"

@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 export const ContactDiv = styled.div`
-  margin: 40px auto 0 auto;
+  margin: 20px auto 0 auto;
   background-color: #f4f6f7;
-  width: 480px;
+  max-width: 600px;
   height: 100%;
-  padding: 40px;
+  padding: 20px 100px;
   border-radius: 6px;
 
   h1 {
@@ -18,5 +18,8 @@ export const ContactDiv = styled.div`
     font-size: 24px;
     margin-top: 20px;
     margin-bottom: 16px;
+  }
+  p {
+    text-align: center;
   }
 `;

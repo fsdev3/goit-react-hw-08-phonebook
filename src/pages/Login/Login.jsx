@@ -5,7 +5,7 @@ import React from 'react';
 const Login = () => {
   return (
     <>
-      <H1>Login into your account</H1>
+      <H1>Log in into your account</H1>
       <LoginForm />
     </>
   );

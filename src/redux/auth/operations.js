@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import Notiflix from 'notiflix';
 
 axios.defaults.baseURL = 'https://goit-task-manager.herokuapp.com/';
 
@@ -31,8 +32,10 @@ export const logIn = createAsyncThunk(
     try {
       const result = await axios.post('/users/login', credentials);
       setAuthHeader(result.data.token);
+      Notiflix.Notify.success('Login success! :)');
       return result.data;
     } catch (error) {
+      Notiflix.Notify.failure('Something went wrong');
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -41,8 +44,12 @@ export const logIn = createAsyncThunk(
 export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
   try {
     await axios.post('/users/logout');
+    Notiflix.Notify.success('LogOut success! :)');
+
     clearAuthHeader();
   } catch (error) {
+    Notiflix.Notify.failure('Something went wrong');
+
     return thunkAPI.rejectWithValue(error.message);
   }
 });
@@ -54,16 +61,15 @@ export const refreshUser = createAsyncThunk(
     const persistedToken = state.auth.token;
 
     if (persistedToken === null) {
-      // If there is no token, exit without performing any request
       return thunkAPI.rejectWithValue('Unable to fetch contact');
     }
 
     try {
-      // If there is a token, add it to the HTTP header and perform the request
       setAuthHeader(persistedToken);
       const res = await axios.get('/users/current');
       return res.data;
     } catch (error) {
+      Notiflix.Notify.failure('Something went wrong');
       return thunkAPI.rejectWithValue(error.message);
     }
   }

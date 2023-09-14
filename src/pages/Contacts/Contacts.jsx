@@ -13,6 +13,7 @@ const Contacts = () => {
   return (
     <ContactDiv>
       <h1>Phonebook</h1>
+      <p>Add contact name & phone:</p>
       <ContactForm />
       <h2>Contacts</h2>
       <Filter />
