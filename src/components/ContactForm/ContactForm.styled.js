@@ -5,6 +5,6 @@ export const Form = styled.form`
   flex-direction: column;
 
   input {
-    margin-bottom: 6px;
+    margin-bottom: 14px;
   }
 `;

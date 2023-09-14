@@ -3,6 +3,7 @@ import { Form } from './ContactForm.styled';
 import { useDispatch } from 'react-redux';
 import { addContact } from 'redux/operations';
 import { useContacts } from 'hooks/useContacts';
+import { Button } from '@chakra-ui/react';
 
 export const ContactForm = () => {
   const [name, setName] = useState('');
@@ -48,7 +49,9 @@ export const ContactForm = () => {
         required
         onChange={e => setNumber(e.target.value)}
       />
-      <button type="submit">Add contact</button>
+      <Button colorScheme="blue" size="sm" type="submit">
+        Add contact
+      </Button>
     </Form>
   );
 };

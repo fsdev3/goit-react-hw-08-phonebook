@@ -11,7 +11,7 @@ export const Filter = () => {
   const onChange = e => dispatch(setFilter(e.target.value));
   return (
     <FilterDiv>
-      <label>Find contact by Name: </label>
+      <label>Find by name: </label>
       <input
         type="text"
         name="filter"

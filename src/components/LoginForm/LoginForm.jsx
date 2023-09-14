@@ -1,3 +1,4 @@
+import { Button } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/operations';
@@ -16,7 +17,6 @@ const LoginForm = () => {
         password: form.elements.password.value,
       })
     );
-    // form.reset();
     setEmail('');
     setPassword('');
   };
@@ -29,7 +29,6 @@ const LoginForm = () => {
           name="email"
           required
           value={email}
-          // id="outlined-required" // required?
           placeholder="Enter your email"
           onChange={e => setEmail(e.target.value)}
         />
@@ -41,12 +40,13 @@ const LoginForm = () => {
           name="password"
           required
           value={password}
-          // id="outlined-required"
           placeholder="Enter your password"
           onChange={e => setPassword(e.target.value)}
         />
       </label>
-      <button type="submit">Log In</button>
+      <Button colorScheme="blue" size="md" type="submit" mt="12px">
+        Log In
+      </Button>
     </form>
   );
 };

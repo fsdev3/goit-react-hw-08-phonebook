@@ -1,10 +1,19 @@
 import { HeaderNavLink } from './AuthMene.styled';
+import { Button } from '@chakra-ui/react';
 
 const AuthMenu = () => {
   return (
     <>
-      <HeaderNavLink to="/register">SIGN UP</HeaderNavLink>
-      <HeaderNavLink to="/login">LOG IN</HeaderNavLink>
+      <HeaderNavLink to="/register">
+        <Button colorScheme="blue" size="sm">
+          SIGN UP
+        </Button>
+      </HeaderNavLink>
+      <HeaderNavLink to="/login">
+        <Button colorScheme="blue" size="sm">
+          LOG IN
+        </Button>
+      </HeaderNavLink>
     </>
   );
 };

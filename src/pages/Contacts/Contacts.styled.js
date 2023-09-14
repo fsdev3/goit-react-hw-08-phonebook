@@ -2,22 +2,21 @@ import styled from 'styled-components';
 
 export const ContactDiv = styled.div`
   margin: 40px auto 0 auto;
-  background-color: #e1f1f8;
-  width: 360px;
+  background-color: #f4f6f7;
+  width: 480px;
   height: 100%;
-  padding: 60px;
-  border-radius: 4px;
+  padding: 40px;
+  border-radius: 6px;
 
   h1 {
     text-align: center;
-    font-size: 36px;
-    margin-bottom: 20px;
+    font-size: 32px;
   }
 
   h2 {
     text-align: center;
-    font-size: 26px;
-    margin-top: 28px;
-    margin-bottom: 18px;
+    font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: 16px;
   }
 `;

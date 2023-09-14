@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { Item } from './Contact.styled';
 import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/operations';
+import { Button } from '@chakra-ui/react';
 
 export function Contact({ contact }) {
   const dispatch = useDispatch();
@@ -13,9 +14,14 @@ export function Contact({ contact }) {
       <p>
         {name}: {number}
       </p>
-      <button type="button" onClick={handleDeleteContact}>
+      <Button
+        colorScheme="blue"
+        size="xs"
+        type="button"
+        onClick={handleDeleteContact}
+      >
         Delete
-      </button>
+      </Button>
     </Item>
   );
 }

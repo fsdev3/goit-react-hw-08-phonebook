@@ -1,3 +1,4 @@
+import { Button } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
@@ -19,7 +20,6 @@ const RegisterForm = () => {
         password: form.elements.password.value,
       })
     );
-    // form.reset();
     setName('');
     setEmail('');
     setPassword('');
@@ -34,7 +34,6 @@ const RegisterForm = () => {
           name="name"
           value={name}
           required
-          // id="outlined-required"
           placeholder="Enter your name"
           onChange={e => setName(e.target.value)}
         />
@@ -46,7 +45,6 @@ const RegisterForm = () => {
           name="email"
           value={email}
           required
-          // id="outlined-required"
           placeholder="Enter your email"
           onChange={e => setEmail(e.target.value)}
         />
@@ -58,12 +56,13 @@ const RegisterForm = () => {
           name="password"
           value={password}
           required
-          // id="outlined-required"
           placeholder="Enter your password"
           onChange={e => setPassword(e.target.value)}
         />
       </label>
-      <button type="submit">Sign Up</button>
+      <Button colorScheme="blue" size="md" type="submit" mt="12px">
+        Sign Up
+      </Button>
     </form>
   );
 };

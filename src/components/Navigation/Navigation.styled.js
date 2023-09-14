@@ -6,9 +6,10 @@ export const Header = styled.div`
     margin: 0 auto;
     width: 100%;
     max-width: 960px;
-    height: 48px;
-    background-color: #e1f1f8;
-    box-shadow: 2px 2px 2px 1px rgba(10, 10, 10, 0.2);
+    height: 60px;
+    background-color: #b4cbdc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 4px 4px;
 
     nav {
       padding: 14px 16px;
@@ -25,7 +26,11 @@ export const Header = styled.div`
     }
   }
 `;
+
 export const HeaderNavLink = styled(NavLink)`
   font-size: 22px;
   text-decoration: none;
+  &:hover {
+    color: #2986cc;
+  }
 `;

@@ -10,14 +10,14 @@ import { ChakraProvider } from '@chakra-ui/react';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    {/* <ChakraProvider> */}
-    <BrowserRouter basename="/goit-react-hw-08-phonebook">
-      <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
-          <App />
-        </PersistGate>
-      </Provider>
-    </BrowserRouter>
-    {/* </ChakraProvider> */}
+    <ChakraProvider>
+      <BrowserRouter basename="/goit-react-hw-08-phonebook">
+        <Provider store={store}>
+          <PersistGate loading={null} persistor={persistor}>
+            <App />
+          </PersistGate>
+        </Provider>
+      </BrowserRouter>
+    </ChakraProvider>
   </React.StrictMode>
 );
